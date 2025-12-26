@@ -1,0 +1,1 @@
+{"version":3,"file":"countries_data.d.ts","sourceRoot":"","sources":["../countries_data.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,OAAO;IACtB,IAAI,EAAE,MAAM,CAAC;IACb,OAAO,EAAE,MAAM,CAAC;IAChB,SAAS,EAAE,MAAM,EAAE,CAAC;IACpB,UAAU,EAAE,MAAM,CAAC;IACnB,IAAI,EAAE,MAAM,CAAC;IACb,QAAQ,EAAE,MAAM,CAAC;CAClB;AAED,eAAO,MAAM,aAAa,EAAE,OAAO,EA49DlC,CAAA"}
