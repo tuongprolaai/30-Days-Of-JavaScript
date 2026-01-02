@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      background: #fff;
+    }
+
+    h1 {
+      color: #4caf50;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-weight: normal;
+      margin-top: 0;
+    }
+
+    .input-box {
+      margin: 20px 0;
+    }
+
+    input {
+      width: 300px;
+      padding: 12px;
+      border: 2px solid #4caf50;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 5px;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 5px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .number {
+      padding: 15px 0;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .even {
+      background: #4caf50;
+    }
+
+    .odd {
+      background: #f44336;
+    }
+
+    .prime {
+      background: #fdd835;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Number Generator</h1>
+  <h3>30DaysOfJavaScript: DOM Day 3</h3>
+  <p>Author: Asabeneh Yetayeh</p>
+
+  <div class="input-box">
+    <input type="number" id="limit" placeholder="Generate more numbers..." />
+    <button onclick="generateNumbers()">Generate numbers</button>
+  </div>
+
+  <div class="numbers" id="numbers"></div>
+
+  <script>
+    const numbersContainer = document.getElementById('numbers');
+
+    function isPrime(num) {
+      if (num < 2) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    function generateNumbers() {
+      numbersContainer.innerHTML = '';
+      const limit = Number(document.getElementById('limit').value);
+
+      for (let i = 0; i <= limit; i++) {
+        const div = document.createElement('div');
+        div.textContent = i;
+        div.classList.add('number');
+
+        if (isPrime(i)) {
+          div.classList.add('prime');
+        } else if (i % 2 === 0) {
+          div.classList.add('even');
+        } else {
+          div.classList.add('odd');
+        }
+
+        numbersContainer.appendChild(div);
+      }
+    }
+
+    document.getElementById('limit').value = 50;
+    generateNumbers();
+  </script>
+
+</body>
+</html>
